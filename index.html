@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="通用自适应的推理增强系统">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unified Adapter</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" >
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Language
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://unified-adapter-en.github.io">
+            English
+          </a>
+          <a class="navbar-item" href="https://unified-adapter-ch.github.io">
+            中文
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Unified-Adapter: A Unified Adaptive System for Complex Reasoning </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://bcmi.sjtu.edu.cn/~zhangzs/">Zhuosheng Zhang</a>,</span>
+            <span class="author-block">
+              <a href="">Anni Zou</a>,</span>
+            <span class="author-block">
+              <a href="https://bcmi.sjtu.edu.cn/~zhaohai/">Hai Zhao</a>
+            </span>
+            
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Shanghai Jiao Tong University</span>
+
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/Anni123/Unified-Adapter"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-desktop"></i>
+                  </span>
+                  <span>Demo</span>
+                  </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Anni-Zou/Unified-Adapter"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+             
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/overview_en.png" />
+      <h2 class="subtitle has-text-centered">
+        Unified-Adapter is a unified adaptive system for complex reasoning tasks.
+        Unified-Adapter has the characteristics of task self-adaptation and 
+        process automation. It enhances the reasoning ability of the system from 
+        multiple dimensions such as knowledge retrieval, knowledge refinement and 
+        knowledge correction, and adapts to different large language models (LLMs). The 
+        system provides user-friendly visual analysis of results, which has important 
+        academic and application value in the era of LLMs.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">  Website Demos</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="1-carousel" class="carousel results-carousel">
+        <div class="item item-1">
+          <video
+            poster=""
+            id="1"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-identification_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-2">
+          <video
+            poster=""
+            id="2"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-construction_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-3">
+          <video
+            poster=""
+            id="3"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-retrieval_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-4">
+          <video
+            poster=""
+            id="4"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-refinement_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-5">
+          <video
+            poster=""
+            id="4"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-revision_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-6">
+          <video
+            poster=""
+            id="4"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-consistency_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="container">
+      <div id="2-carousel" class="carousel results-carousel">
+        <div class="item item-8">
+          <video
+            poster=""
+            id="8"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-refinement_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-9">
+          <video
+            poster=""
+            id="9"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source src="./static/videos/self-revision_fast.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="item item-10">
+          <video
+            poster=""
+            id="10"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-consistency_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-11">
+          <video
+            poster=""
+            id="11"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-identification_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-12">
+          <video
+            poster=""
+            id="12"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source
+              src="./static/videos/self-construction_fast.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="item item-13">
+          <video
+            poster=""
+            id="13"
+            autoplay
+            controls
+            muted
+            loop
+            playsinline
+            height="100%"
+          >
+            <source src="./static/videos/self.retrieval_fast.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- System Workflow. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">System Workflow</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Unified-Adapter</b> is based on the chain-of-thought (CoT) prompting, with the features of task self-adaptation and process automation, 
+            effectively adapting the LLMs to diverse task scenarios. The workflow of the system is divided into six steps:
+          </p>
+          <ol>
+            <li>
+              <b>Self-identification</b>: the user inputs a question, and the system automatically identifies the type of question and selects the 
+              question-adapted prompts.
+            </li>
+            <li>
+              <b>Self-construction</b>: the system clusters and classifies the questions in the data pool according to the question type, and automatically 
+              constructs samples to ensure the high efficiency of the method and the diversity of the constructed samples.
+            </li>
+            <li>
+              <b>Self-retrieval</b>: the system extracts relevant knowledge from multi-source knowledge base according to the content of the input problem, 
+              providing diversified knowledge bases and effectively alleviating the problem of hallucination.
+            </li>
+            <li>
+              <b>Self-refinement</b>: the system rewrites and corrects the original CoT according to the automatically extracted high-quality knowledge to 
+              improve its accuracy and logic.
+            </li>
+            <li>
+              <b>Self-consistency</b>: the system adopts a self-consistency decoding strategy, sampling the CoT (both initial and corrected) multiple times 
+              during the process. The output is automatically organised by mimicking human divergent thinking and the most self-consistent answer is selected as the final answer.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!--/ System Workflow. -->
+
+
+    <!-- Paper video. -->
+    <!--<div class="columns is-centered has-text-centered">-->
+      <!--<div class="column is-four-fifths">-->
+        <!--<h2 class="title is-3">Video</h2>-->
+        <!--<div class="publication-video">-->
+          <!--<iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"-->
+                  <!--frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+
+    <!-- System Workflow. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Related Works</h2>
+        <img src="./static/images/related_work_comparison.png" />
+
+        <div class="content has-text-justified">
+          <p>
+            Recent work has enhanced the CoT system in three main aspects:
+          </p>
+          <ul>
+            <li>
+              <b>Sample Selection</b>: <a href="https://arxiv.org/abs/2210.03493">Auto-CoT</a> and <a href="https://arxiv.org/abs/2212.08635">Self-Prompting</a> guide LLMs 
+              through various types of reasoning by automatically constructing diverse, task-adapted prompt samples.
+            </li>
+            <li>
+              <b>Reasoning Enhancement</b>: Knowledge augmentation methods such as <a href="https://arxiv.org/abs/2305.11738">CRITIC</a>, <a href="https://arxiv.org/abs/2305.03268">Verify-and-Edit</a> and <a href="https://arxiv.org/abs/2304.13007">Multi-Chain Reasoning (MCR)</a> correct the inference chain by interacting with external knowledge.
+            </li>
+            <li>
+              <b>Decoding Strategy</b>: <a href="https://arxiv.org/abs/2203.11171">Self-Consistency</a> generates diverse reasoning paths for aggregation by sampling from the decoder.
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!--/ System Workflow. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+
+    <!-- System Workflow. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <img src="./static/images/related_work_comparison.png" />
+
+        <div class="content has-text-justified">
+          <p>
+            Compared to the zero-shot setting, our system (<b>Unified-Adapter</b>) significantly boosts the performance and improves the method's interpretability. 
+          </p>
+          
+
+        </div>
+      </div>
+    </div>
+    <!--/ System Workflow. -->
+
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+     
+      <a class="icon-link" href="https://github.com/Anni-Zou/Unified-Adapter" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
