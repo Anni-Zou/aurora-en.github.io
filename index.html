@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="description"
         content="通用自适应的推理增强系统">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Unified Adapter</title>
 
@@ -405,16 +404,20 @@
               constructs samples to ensure the high efficiency of the method and the diversity of the constructed samples.
             </li>
             <li>
-              <b>Self-retrieval</b>: the system extracts relevant knowledge from multi-source knowledge base according to the content of the input problem, 
+              <b>Self-retrieval</b>: the system extracts relevant knowledge from multi-source knowledge bases according to the content of the input problem, 
               providing diversified knowledge bases and effectively alleviating the problem of hallucination.
             </li>
             <li>
+              <b>Self-refinement</b>: the system fuses and refines knowledge from multiple sources in order to achieve double-checking and filtering between 
+              different sources of knowledge and to improve the reliability of knowledge enhancement.
+            </li>
+             <li>
               <b>Self-refinement</b>: the system rewrites and corrects the original CoT according to the automatically extracted high-quality knowledge to 
               improve its accuracy and logic.
             </li>
             <li>
               <b>Self-consistency</b>: the system adopts a self-consistency decoding strategy, sampling the CoT (both initial and corrected) multiple times 
-              during the process. The output is automatically organised by mimicking human divergent thinking and the most self-consistent answer is selected as the final answer.
+              during the process. The output is automatically organized by mimicking human divergent thinking and the most self-consistent answer is selected as the final answer.
             </li>
           </ol>
         </div>
